@@ -120,7 +120,9 @@ const App = (): JSX.Element => {
         source: source as string,
         target: target as string,
         markerEnd: {
-          type: MarkerType.ArrowClosed
+          type: MarkerType.ArrowClosed,
+          width: 40,
+          height: 40
         }
       })
       const nextEdges = nodeGraph.getEdges()
