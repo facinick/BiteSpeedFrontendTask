@@ -5,6 +5,9 @@
   This design choice allows us to maintain control over the domain logic independently of the UI library.
   If we decide to swap ReactFlow for another library in the future, we can do so easily without significant changes.
 
+  Any operation to the ReactFlow like adding a node, removing node, chaning content etc, will require to use NodeGraph to make those
+  operations happen, get latest set of nodes / edges and update state in the app.
+
   For example, the NodeGraph.ts file includes logic for managing connections, such as allowing only one incoming 
   connection but multiple outgoing connections for each node (in addNode() method). Each node specifies its own rules for incoming and 
   outgoing connections. By embedding this logic directly into our graph data, we ensure that our domain rules are 
@@ -211,6 +214,7 @@ const App = (): JSX.Element => {
     const updatedChanges = changes.map(({id, position}) => ({
       id,
       updates: {
+        // because upon position change, last event fired has draggable false and no position object
         ...(position && { position })
       }
     }));
