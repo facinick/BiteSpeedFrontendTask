@@ -1,0 +1,7 @@
+.app {
+  text-align: center;
+}
+
+.main-aside {
+  height: calc(100vh - var(--header-height));
+}

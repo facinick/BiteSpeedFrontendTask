@@ -1,0 +1,42 @@
+.settings-panel {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 30px;
+  /* border-bottom: 1px solid var(--border-color); */
+}
+
+.header-bottom-border {
+  height: 1px;
+  margin: -10px -10px -10px -10px;
+  background-color: var(--border-color);
+}
+
+.back-button {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  text-align: start;
+}
+
+.content {
+
+}

@@ -1,0 +1,11 @@
+.node-type {
+  color: #5F5F5F;
+  text-align: left;
+}
+
+.node-message-edit-area {
+  width: 100%;
+  border-color: #5F5F5F;
+  border-radius: 10px;
+  padding: 10px;
+}

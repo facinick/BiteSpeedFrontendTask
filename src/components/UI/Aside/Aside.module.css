@@ -1,0 +1,5 @@
+.aside {
+  height: 100%;
+  width: var(--aside-width);
+  border-left: 1px solid var(--border-color);
+}

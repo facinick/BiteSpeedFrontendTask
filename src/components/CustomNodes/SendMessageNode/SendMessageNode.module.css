@@ -1,0 +1,72 @@
+.send-message-node {
+  display: flex;
+  align-items: center;
+  background-color: #e0f7fa;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: var(--box-shadow);
+  width: 300px;
+  position: relative;
+}
+
+.selected {
+  outline: 2px solid #417c84;
+}
+
+.send-message-node-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  /*  */
+  gap: 10px;
+}
+
+.send-message-label {
+  font-weight: bold;
+  margin-top: 5px;
+  width: 100%;
+  color: #00796b;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  /*  */
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.send-message-message {
+  color: #004d40;
+  word-break: break-all;
+  /*  */
+  background: white;
+  margin: 0;
+  padding: 10px;
+  margin-left: -10px;
+  margin-right: -10px;
+  margin-bottom: -10px;
+  min-height: 60px;
+  text-align: justify;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.target-handle,
+.source-handle {
+  width: 18px;
+  height: 18px;
+  background-color: #00796b; 
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.target-handle {
+  left: -9px;
+}
+
+.source-handle {
+  right: -9px;
+}
