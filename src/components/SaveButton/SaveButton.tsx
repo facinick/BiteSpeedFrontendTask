@@ -1,3 +1,4 @@
+import { Button } from '../UI/Button/Button'
 import styles from './SaveButton.module.css'
 
 interface Props {
@@ -6,9 +7,8 @@ interface Props {
 }
 
 const SaveButton = ({children, onClick}: Props): JSX.Element => {
-
   return (
-    <button title="Save Changes" onClick={onClick} className={styles['save-button']}>{children}</button>
+    <Button title="Save Changes" onClick={onClick} className={styles['save-button']}>{children}</Button>
   )
 }
 

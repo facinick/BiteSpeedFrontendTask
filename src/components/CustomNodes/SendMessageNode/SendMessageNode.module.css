@@ -40,6 +40,8 @@
   color: #004d40;
   word-break: break-all;
   /*  */
+  display: flex;
+  align-items: center;
   background: white;
   margin: 0;
   padding: 10px;
