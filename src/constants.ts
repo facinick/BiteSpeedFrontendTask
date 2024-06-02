@@ -1,4 +1,13 @@
-import { FlowNodeConnectionsLength, FlowNodeCustomType, PartialFlowNode } from "./types/nodes"
+import { ArrowLeft, MessageSquareText, Trash2 } from "lucide-react";
+import { FC } from "react";
+import { IconName } from "./types/icons";
+import { FlowNodeConnectionsLength, FlowNodeCustomType, PartialFlowNode } from "./types/nodes";
+
+const ICONS: Record<IconName, FC> = {
+  [IconName.TextMessage]: MessageSquareText,
+  [IconName.SettingsPanelBackButton]: ArrowLeft,
+  [IconName.NodeDelete]: Trash2,
+};
 
 const NODES_LIST: Array<PartialFlowNode> = [
   {
@@ -6,10 +15,10 @@ const NODES_LIST: Array<PartialFlowNode> = [
     type: FlowNodeCustomType.MESSAGE,
     data: {
       playgroundNodeLabel: 'Send Message',
-      playgroundNodeLogoSVGId: 'text-message-icon',
+      playgroundNodeLogoIconName: IconName.TextMessage,
       playgroundNodeMessage: 'New Message',
       panelNodeLabel: 'Message',
-      panelNodeLogoSVGId: 'text-message-icon',
+      panelNodeLogoIconName: IconName.TextMessage,
     },
     allowedIncomingConnections: FlowNodeConnectionsLength.ONE,
     allowedOutgoingConnections: FlowNodeConnectionsLength.MANY,
@@ -17,5 +26,6 @@ const NODES_LIST: Array<PartialFlowNode> = [
 ]
 
 export {
-  NODES_LIST
-}
+  ICONS, NODES_LIST
+};
+

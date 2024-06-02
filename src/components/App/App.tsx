@@ -56,7 +56,7 @@
 */
 
 import { useMemo, useState } from 'react';
-import ReactFlow, { Background, Controls, MarkerType, MiniMap, NodeChange, NodePositionChange, NodeSelectionChange, OnConnect, OnNodesChange, ReactFlowInstance } from 'reactflow';
+import ReactFlow, { Background, Controls, MarkerType, MiniMap, NodeChange, NodePositionChange, NodeProps, NodeSelectionChange, OnConnect, OnNodesChange, ReactFlowInstance } from 'reactflow';
 import 'reactflow/dist/style.css';
 import NodeGraph from '../../data/NodeGraph';
 import { FlowEdge, FlowNode } from '../../types/nodes';
@@ -72,8 +72,6 @@ import { Flex } from '../UI/Flex/Flex';
 import { Header } from '../UI/Header/Header';
 import { Main } from '../UI/Main/Main';
 import styles from './App.module.css';
-
-const nodeTypes = { MESSAGE: SendMessageNode };
 
 const App = (): JSX.Element => {
 
@@ -153,12 +151,13 @@ const App = (): JSX.Element => {
     }
   }
 
-  const deleteNode = (node: FlowNode) => {
-    nodeGraph.removeNode(node.id);
+  const deleteNode = (nodeId: FlowNode['id']) => {
+    nodeGraph.removeNode(nodeId);
     const nextNodes = nodeGraph.getNodes()
     const nextEdges = nodeGraph.getEdges()
     setNodes(nextNodes)
     setEdges(nextEdges)
+    setSelectedNode(null)
   }
 
   const saveFlow = () => {
@@ -256,6 +255,13 @@ const App = (): JSX.Element => {
     const nextNodes = nodeGraph.getNodes()
     setNodes(nextNodes)
   }
+
+  // custom nodes and their props here
+  const nodeTypes = useMemo(() => ({
+    MESSAGE: (nodeProps: NodeProps) => (
+      <SendMessageNode {...nodeProps} onDelete={deleteNode} />
+    ),
+  }), [])
 
   return (
     <div className={styles.app}>

@@ -1,6 +1,6 @@
 import { DragEventHandler } from 'react';
 import { FlowNode, PartialFlowNode } from '../../types/nodes';
-import { generateID, getIconForId } from '../../utils';
+import { generateID, getIcon } from '../../utils';
 import styles from './PanelNode.module.css';
 
 interface Props {
@@ -9,7 +9,7 @@ interface Props {
 
 const PanelNode = ({ panelNode }: Props): JSX.Element => {
 
-  const { panelNodeLogoSVGId, panelNodeLabel } = panelNode.data
+  const { panelNodeLogoIconName, panelNodeLabel } = panelNode.data
 
   const handleDragStart: DragEventHandler<HTMLButtonElement> = (event) => {
 
@@ -20,10 +20,10 @@ const PanelNode = ({ panelNode }: Props): JSX.Element => {
       type: panelNode.type,
       data: {
         playgroundNodeLabel: panelNode.data.playgroundNodeLabel,
-        playgroundNodeLogoSVGId: panelNode.data.playgroundNodeLogoSVGId,
+        playgroundNodeLogoIconName: panelNode.data.playgroundNodeLogoIconName,
         playgroundNodeMessage: panelNode.data.playgroundNodeMessage,
         panelNodeLabel: panelNode.data.panelNodeLabel,
-        panelNodeLogoSVGId: panelNode.data.panelNodeLogoSVGId
+        panelNodeLogoIconName: panelNode.data.panelNodeLogoIconName
       },
       allowedIncomingConnections: panelNode.allowedIncomingConnections,
       allowedOutgoingConnections: panelNode.allowedOutgoingConnections,
@@ -38,11 +38,11 @@ const PanelNode = ({ panelNode }: Props): JSX.Element => {
     event.dataTransfer.setData('panelNode', JSON.stringify(newNode))
   }
 
-  const Icon = getIconForId(panelNodeLogoSVGId)
+  const PanelNodeLogoIcon = getIcon(panelNodeLogoIconName)
 
   return (
     <button title="Drag to viewport to add" onDragStart={handleDragStart} draggable className={styles['panel-node']}>
-      <div className={styles['panel-node-icon']}>{Icon && <Icon />}</div>
+      <div className={styles['panel-node-icon']}>{PanelNodeLogoIcon && <PanelNodeLogoIcon />}</div>
       <span className={styles['panel-node-label']}>{panelNodeLabel}</span>
     </button>
   )

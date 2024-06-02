@@ -1,5 +1,6 @@
+import { IconName } from '../../types/icons'
 import { FlowNodeCustomType, type FlowNode } from '../../types/nodes'
-import { getIconForId } from '../../utils'
+import { getIcon } from '../../utils'
 import { MessageNodeSettings } from '../MessageNodeSettings/MessageNodeSettings'
 import styles from './SettingsPanel.module.css'
 
@@ -12,13 +13,13 @@ interface Props {
 
 const SettingsPanel = ({ selectedNode, onTextNodeSettingsChange, onGoBack }: Props): JSX.Element => {
 
-  const Icon = getIconForId('settings-panel-back-button')
+  const BackButtonIcon = getIcon(IconName.SettingsPanelBackButton)
 
   return (
     <div className={styles['settings-panel']}>
       <div className={styles.header}>
         <button title="Go Back" onClick={onGoBack} className={styles['back-button']}>
-        { Icon && <Icon /> }
+        { BackButtonIcon && <BackButtonIcon /> }
         </button>
         <div className={styles['title']}>{selectedNode.data.panelNodeLabel}</div>
       </div>

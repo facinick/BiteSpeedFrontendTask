@@ -1,4 +1,5 @@
 import { MarkerType, type Edge, type Node } from 'reactflow';
+import { IconName } from './icons';
 
 /*
  Extend this to add more custom types to our application.
@@ -22,10 +23,10 @@ interface FlowNode extends Node {
   type: Node['type'] | FlowNodeCustomType;
   data: {
     playgroundNodeLabel: string,
-    playgroundNodeLogoSVGId: string,
+    playgroundNodeLogoIconName: IconName,
     playgroundNodeMessage: string,
     panelNodeLabel: string,
-    panelNodeLogoSVGId: string,
+    panelNodeLogoIconName: IconName,
   };
   allowedIncomingConnections: FlowNodeConnectionsLength
   allowedOutgoingConnections: FlowNodeConnectionsLength
