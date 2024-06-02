@@ -75,7 +75,7 @@ import styles from './App.module.css';
 
 const App = (): JSX.Element => {
 
-  const [reactFlowInstance, setReactFlowInstance] = useState<ReactFlowInstance<any, any> | null>(null);
+  const [reactFlowInstance, setReactFlowInstance] = useState<ReactFlowInstance<FlowNode, FlowEdge> | null>(null);
 
   const nodeGraph = useMemo(() => new NodeGraph(), [])
 
