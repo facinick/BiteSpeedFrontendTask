@@ -54,6 +54,9 @@ There was no real need for using any external library except ReactFlow. However,
 - `lucide-react` (for icons)
 - `classnames` (for merging classnames)
 
+## Demo
+- [https://bite-speed-frontend-task-facinick.vercel.app/](https://bite-speed-frontend-task-facinick.vercel.app/)
+
 ## Resources
 
 - [HTML Drag and Drop API](https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API)
