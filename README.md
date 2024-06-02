@@ -48,7 +48,7 @@ The `UI` folder contains components purely for organization and semantics with n
 
 ## External Libraries
 
-There was no real need for using any external library except ReactFlow. However, we used the following out of habit:
+There was no real need for using any external library except ReactFlow. However, I've used the following out of habit:
 - `uuid` (for generating unique IDs)
 - `class-variance-authority` (for creating variants of Flex component)
 - `lucide-react` (for icons)
@@ -59,7 +59,7 @@ There was no real need for using any external library except ReactFlow. However,
 
 ## Resources
 
+- [ReactFlow API Reference](https://reactflow.dev/api-reference)
 - [HTML Drag and Drop API](https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API)
 - [StackOverflow: DataTransfer Explanation](https://stackoverflow.com/a/21341021)
-- [ReactFlow API Reference](https://reactflow.dev/api-reference)
 - [Create React App](https://create-react-app.dev/docs/adding-typescript/)

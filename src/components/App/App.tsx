@@ -84,7 +84,7 @@ const App = (): JSX.Element => {
   const [selectedNode, setSelectedNode] = useState<FlowNode | null>(null);
 
   const onNodesChange: OnNodesChange = (changes: NodeChange[]) => {
-
+    // So far in my testing, Bulk changes have come in same type at a time
     switch (changes[0].type) {
       case 'add': {
         return;
@@ -93,7 +93,7 @@ const App = (): JSX.Element => {
         return;
       }
       case 'position': {    
-        updatePosition(changes as unknown as NodePositionChange[])
+        updatePosition(changes as NodePositionChange[])
         return;
       }
       case 'remove': {
@@ -103,7 +103,7 @@ const App = (): JSX.Element => {
         return;
       }
       case 'select': {    
-        updateSelection(changes as unknown as NodeSelectionChange[])
+        updateSelection(changes as NodeSelectionChange[])
         return;
       }
     }
@@ -201,9 +201,9 @@ const App = (): JSX.Element => {
   }
 
   const goBackFromSettings = () => {
-    if(selectedNode?.id) {
+    if(selectedNode) {
       updateSelection([{
-        id: selectedNode?.id,
+        id: selectedNode.id,
         selected: false,
         type: 'select'
       }])
