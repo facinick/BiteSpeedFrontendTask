@@ -5,7 +5,7 @@ interface Props {
 }
 
 const PanelContainer = ({children}: Props): JSX.Element => {
-  return (<aside className={styles['panel-container']}>{children}</aside>)
+  return (<div className={styles['panel-container']}>{children}</div>)
 }
 
 export {
