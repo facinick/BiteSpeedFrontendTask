@@ -54,6 +54,9 @@ There was no real need for using any external library except ReactFlow. However,
 - `lucide-react` (for icons)
 - `classnames` (for merging classnames)
 
+##Bugs:
+- 0 connections
+
 ## Demo
 - [https://bite-speed-frontend-task-facinick.vercel.app/](https://bite-speed-frontend-task-facinick.vercel.app/)
 
