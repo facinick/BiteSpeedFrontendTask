@@ -7,7 +7,7 @@ const generateID = (): string => {
   return newUUID 
 };
 
-export const getIcon = (name: IconName): React.FC | null => {
+const getIcon = (name: IconName): React.FC | null => {
   const IconComponent = ICONS[name];
   if (!IconComponent) {
     console.warn(`Icon "${name}" not found`);
@@ -17,6 +17,7 @@ export const getIcon = (name: IconName): React.FC | null => {
 };
 
 export {
-  generateID
+  generateID,
+  getIcon
 };
 
